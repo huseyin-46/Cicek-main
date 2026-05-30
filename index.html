@@ -368,6 +368,38 @@
         </div>
     </div>
     <script src="script.js"></script>
+
+
+
+
+
+
+
+
+<audio id="muzik" autoplay>
+  <source src="https://open.spotify.com/track/5XeFesFbtLpXzIVDNQP22n?si=qsIBaJRsSHmuKWT5Yjc7BA" type="audio/mp4">
+</audio>
+
+<script>
+const muzik = document.getElementById("muzik");
+
+const baslangic = 15; // 0:15
+const bitis = 70;    // 1:10
+
+muzik.addEventListener("loadedmetadata", () => {
+    muzik.currentTime = baslangic;
+    muzik.play();
+}); 
+
+muzik.addEventListener("timeupdate", () => {
+    if (muzik.currentTime >= bitis) {
+        muzik.currentTime = baslangic
+    }
+});
+</script>
+
+
+    
 </body>
 
 </html>
