@@ -2,12 +2,6 @@
 <html lang="en">
 
 <head>
-
-
-
-
-
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magical Night Flowers</title>
@@ -376,18 +370,27 @@
     <script src="script.js"></script>
 
 
-<iframe
-style="border-radius:12px"
-src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n"
-width="300"
-height="80"
-frameBorder="0"
-allowfullscreen=""
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-</iframe>
+<audio id="muzik" autoplay>
+  <source src="muzik.mp3" type="audio/mp3">
+</audio>
 
+<script>
+const muzik = document.getElementById("muzik");
 
-    
+const baslangic = 15; // 0:15
+const bitis = 70;    // 1:10
+
+muzik.addEventListener("loadedmetadata", () => {
+    muzik.currentTime = baslangic;
+    muzik.play();
+}); 
+
+muzik.addEventListener("timeupdate", () => {
+    if (muzik.currentTime >= bitis) {
+        muzik.currentTime = baslangic
+    }
+});
+</script> 
 </body>
 
 </html>
