@@ -371,7 +371,7 @@
 
 
 <audio id="muzik" autoplay>
-  <source src="muzik.mp3" type="audio/mp3">
+  <source src="muzik.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -387,7 +387,7 @@ muzik.addEventListener("loadedmetadata", () => {
 
 muzik.addEventListener("timeupdate", () => {
     if (muzik.currentTime >= bitis) {
-        muzik.currentTime = baslangic
+        muzik.currentTime = baslangic;
     }
 });
 </script> 
